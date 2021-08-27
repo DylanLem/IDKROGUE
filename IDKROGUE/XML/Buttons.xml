@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+<base>
+  <button name="Play">
+    
+    <spritePath>"playbutton.png"</spritePath>
+
+    <localPosition>0.5,0.5</localPosition>
+    
+    <function eventTrigger="3" eventName="LoadScene">
+      <eventArgs type="LoadSceneArgs">
+        <SceneName>"TheLevel"</SceneName>
+      </eventArgs>
+
+    </function>
+    
+  </button>
+
+
+</base>

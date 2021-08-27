@@ -1,0 +1,8 @@
+﻿**EVENTS**
+
+
+
+This will explain how events are implemented and how to add them to objects
+
+
+

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<base name = "start">
+  <fullscreen>1</fullscreen>
+  <bgColor>255,255,255</bgColor>
+
+  <contents>
+    
+    
+  </contents>
+  
+</base>

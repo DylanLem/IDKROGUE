@@ -1,0 +1,35 @@
+﻿**BUTTONS**
+
+
+Buttons inherit:
+	- IDrawable
+	- IClickable 
+
+
+Buttons are UI objects that contain mouse events.
+
+Buttons can be triggered from the following actions (from IClickable): 
+	- OnMouseOver
+	- OnMouseExit
+	- OnMouseClick
+
+
+
+
+The XML format for a button looks like this:
+
+<..>
+
+	<button name="Name"> <- Identifier for the button when loading from file
+
+	<spritePath>"path.png"</spritePath> 
+
+	<localPosition> new Vector(pos) </localPosition>
+
+	<functions>
+
+		<..> // See the docs for Event Functions + Loading for this 
+
+	</functions>
+
+</..>
