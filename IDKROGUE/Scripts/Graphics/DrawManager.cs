@@ -7,9 +7,10 @@ namespace IDKROGUE
 
     //The respectful term is SceneArtiste
     //This guy will grab all drawables and draw them!  {:^)
-    public static class SceneDrawer
+    public static class DrawManager
     {
 
+        private static List<IDrawable> drawables { get => SceneManager.RetrieveCollection<IDrawable>(); }
 
 
 

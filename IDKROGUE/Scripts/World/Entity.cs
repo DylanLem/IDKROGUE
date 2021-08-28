@@ -10,8 +10,11 @@ namespace IDKROGUE
 
     public abstract class Entity
     {
-        public int id { get; }
-        public Texture2D Sprite { get; set; }
+
+        public Entity()
+        {
+            this.AddToScene();
+        }
 
     }
 }

@@ -9,7 +9,12 @@ namespace IDKROGUE
 {
     public static class ContentManager
     {
-        public static Dictionary<string, Texture2D> Sprites { get; }
+        
+
+
+        public static List<dynamic> QueuedContent = new List<dynamic>();
+
+        private static Dictionary<string, Texture2D> Sprites = new Dictionary<string, Texture2D>();
 
 
         public static Texture2D GetSprite(this IDrawable drawable)

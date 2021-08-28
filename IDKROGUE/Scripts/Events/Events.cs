@@ -43,7 +43,7 @@ namespace IDKROGUE
 
         //Loads a scene by name.
         //the eventArgs must be of type LoadSceneArgs
-        static void LoadScene(object sender, EventArgs e)
+        private static void LoadScene(object sender, EventArgs e)
         {
             LoadSceneArgs args;
 

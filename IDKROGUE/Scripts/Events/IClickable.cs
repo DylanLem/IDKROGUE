@@ -6,6 +6,7 @@ namespace IDKROGUE
 {
     public interface IClickable : IHasEvent
     {
+        //da events
         event EventHandler Clicked, MouseEntered, MouseExited;
 
         

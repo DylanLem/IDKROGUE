@@ -174,9 +174,6 @@ namespace IDKROGUE
 
             EventArgs eventArgs = reader.ReadElementContentAsEventArgs();
 
-
-
-
         }
 
 
