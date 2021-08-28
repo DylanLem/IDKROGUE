@@ -1,6 +1,6 @@
 # IDKROGUE
 
-Welcome 2 my game/engine
+Welcome 2 my game/engine (mainly engine rn)
 
 
 The goal is to make an easy to use roguelike/rpg engine that handles tasks like:
@@ -47,6 +47,8 @@ in moving the program along smoothly by sifting and returning data relevent to c
   - Sprite Manager: Static class that behaves as a data-bucket for loaded sprites, and can be called to load them as well
   - Scene Manager: Tracks what's happening in the current scene. Includes data such as entities, world data, and the player
   - Draw Manager: Handles all drawables, sorts them by relevant info such as shader (to reduce GPU calls). Main job is to keep draw calls at peak efficiency
+
+<i> Latest Milestone: Added Content + Scene Manager to track important data in your game
 ________________________________________________________________________________
 
 <b>SHADER SYSTEM</b>
