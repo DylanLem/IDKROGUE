@@ -4,17 +4,10 @@ using System.Text;
 
 namespace IDKROGUE
 {
-    class Level
+    //This guy looks for events to be checked on!
+    public static class EventManager
     {
-        public Room[][] rooms;
 
 
-
-        public Level()
-        {
-
-        }
     }
-
-
 }

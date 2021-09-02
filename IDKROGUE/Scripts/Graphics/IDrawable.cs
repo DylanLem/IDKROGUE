@@ -8,21 +8,23 @@ using Microsoft.Xna.Framework.Graphics;
 namespace IDKROGUE
 {
 
-
+    //Use this interface for anything u wanna render on screen.
     public interface IDrawable
     {
-        public string SpritePath { get; set; }
-        public Texture2D Sprite { get => this.GetSprite(); }
-        public Color Color { get; set; }
-        public Vector2 ScreenPosition { get; set; }
+        string SpritePath { get; set; }
+
+        Vector2 Scaling { get; set; }
+        Texture2D Sprite => this.GetSprite();
+        Color Color { get => Color.White; set => Color = value; }
+        Vector2 ScreenPosition { get => Vector2.Zero;  set => ScreenPosition = value; }
+        bool IsOnScreen { get; set; }
+        bool IsDrawn { get; set; }
         
 
 
-        public virtual void Draw(SpriteBatch sb)
+        public void Draw(SpriteBatch sb)
         {
-            sb.Draw(this.Sprite, this.ScreenPosition, this.Color);
-
-            System.Diagnostics.Debug.WriteLine("Drawling");
+            sb.Draw(this.Sprite, this.ScreenPosition, null, this.Color, 0f, Vector2.Zero, 8, SpriteEffects.None, 0.1f);
         }
 
         

@@ -31,17 +31,15 @@ namespace IDKROGUE
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            SpriteManager.LoadAllTextures(Content, _graphics.GraphicsDevice);
+
+
+
             XMLDeserializer.LoadButton("Play");
 
-            System.Console.WriteLine("Hi");
-
             // TODO: use this.Content to load your game content here
+            base.LoadContent();
         }
-
-        public static void LoadSprite(string spritePath)
-        { 
-        }
-
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
@@ -56,7 +54,7 @@ namespace IDKROGUE
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            DrawManager.DrawScene(_spriteBatch);
 
             base.Draw(gameTime);
         }

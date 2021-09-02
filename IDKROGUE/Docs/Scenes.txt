@@ -1,0 +1,6 @@
+﻿**SCENES**
+
+The game runs on a scene-system. Consider a scene to be your unit portion of the world you're using. 
+
+A scene may be something like a character running along an overworld or exploring a dungeon
+

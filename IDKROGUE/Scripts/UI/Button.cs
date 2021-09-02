@@ -5,7 +5,8 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace IDKROGUE
 {
-    public class Button : IClickable, IDrawable
+    //Its a button bro what is there to say
+    public class Button : Entity, IClickable, IDrawable
     {
 
         #region INHERITED_PROPERTIES
@@ -40,40 +41,19 @@ namespace IDKROGUE
     
         //IDrawable 
         public string SpritePath { get; set; }
-        public Texture2D Sprite { get; }
         public Vector2 ScreenPosition { get; set; }
-        public Color Color { get; set; }
+        public bool IsOnScreen { get; set; }
+        public bool IsDrawn { get; set; }
+        public Vector2 Scaling { get; set; }
 
         //Done
 
         #endregion
 
-
-        #region PROPERTIES
-        public Vector2 localPosition { get; set; } //the vector position with respect to the parent menu (or screen if parentless)
-        public Rectangle BoundingBox { get => Sprite.Bounds; }
-
-        #endregion
-
-
-
-
-
-
-        public Button()
-        {
-            EventArguments = new EventArgs[Events.GetLength(0)];
-            
-        }
-
-
-
-
-
         #region INHERITED_METHODS
         public void OnMouseEnter()
         {
-            
+
 
             MouseEntered?.Invoke(this, EventArguments[0]);
         }
@@ -91,6 +71,26 @@ namespace IDKROGUE
         }
 
         #endregion
+
+        #region PROPERTIES
+        public Menu Parent { get; set; }
+        public Vector2 localPosition { get; set; } //the vector position with respect to the parent menu (or screen if parentless)
+
+
+        #endregion
+
+
+     
+
+        public Button() : base()
+        {
+            EventArguments = new EventArgs[Events.GetLength(0)];
+            
+        }
+
+
+
+       
 
 
     }

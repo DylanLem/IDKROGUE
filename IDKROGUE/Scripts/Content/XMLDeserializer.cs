@@ -36,7 +36,7 @@ namespace IDKROGUE
 
             while(reader.Name != "button")
             {
-           
+                
 
                 switch(reader.Name)
                 {
@@ -55,9 +55,6 @@ namespace IDKROGUE
 
                 }
             }
-
-
-
 
 
             return button;
@@ -90,7 +87,6 @@ namespace IDKROGUE
         }
 
 
-
         //Loads a vector from an XML file
         public static Vector2 ReadElementContentAsVector2(this XmlReader reader)
         {
@@ -120,6 +116,9 @@ namespace IDKROGUE
                     ("Error loading event function from file. Event " + name + " not found in event map");
 
 
+            //It's courteous to advance to the next line when ur done
+            reader.Read();
+
             //if we're in the clear we can return the event!
             return Events.EventMap[name];
 
@@ -131,8 +130,7 @@ namespace IDKROGUE
         {
             
             //Find our type from the "type" attribute on the <eventArgs> element
-            Type t = Type.GetType("IDKROGUE." + reader.GetAttribute("type"));
-           
+            Type t = Type.GetType("IDKROGUE." + reader.GetAttribute("type")); 
 
             //Instantiate our generic object
             var eventArgs = Activator.CreateInstance(t);
@@ -143,25 +141,14 @@ namespace IDKROGUE
             //runs until it hits the eventargs closing tag
             while(reader.Name != "eventArgs")
             {
-                
                 //Getting the eventArgs property by name, whatever it is
                 System.Reflection.PropertyInfo property = eventArgs.GetType().GetProperty(reader.Name);
-
-                
-
                 Type propType = property.PropertyType;
 
-
                 property.SetValue(eventArgs, reader.ReadElementContentAs(propType, null));
-                System.Diagnostics.Debug.WriteLine("Moved to Node:  " + reader.Name);
-
-                
-
-        
             }
 
-            
-
+            reader.Read();
             return (EventArgs)eventArgs;
         }
 
@@ -169,11 +156,9 @@ namespace IDKROGUE
         public static void LoadEventFromFile(this IHasEvent eventOwner, XmlReader reader)
         {
             EventHandler eventFunc = reader.ReadElementContentAsEvent();
-
-            reader.Read();
-
             EventArgs eventArgs = reader.ReadElementContentAsEventArgs();
 
+            reader.Read();
         }
 
 
