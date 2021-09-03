@@ -8,8 +8,10 @@ namespace IDKROGUE
 
     public class Game1 : Game
     {
-        private GraphicsDeviceManager _graphics;
+        private static GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+
+        public static Vector2 ScreenSize { get => new Vector2(_graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight); }
 
         public Game1()
         {

@@ -4,11 +4,14 @@ using System.Collections.Generic;
 namespace IDKROGUE
 {
     //Contains every type of trigger for events
+
+
+    [Flags]
     public enum EventTrigger
     {
-        MouseEntered = 0,
-        MouseExited,
-        MouseClicked
+        MouseEntered  = 1,
+        MouseExited   = 2,
+        MouseClicked  = 4
     }
 
 
